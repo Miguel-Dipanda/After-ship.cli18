@@ -1,0 +1,280 @@
+/* Reset basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #fffdfd;
+    color: #111111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #ffcc00;
+    border-bottom: 1px solid #ffcc00;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.logo-icon {
+    color: #d40511;
+}
+
+.logo-text{
+    color: #d40511;
+
+}
+
+.logo-sub {
+    font-weight: 400;
+    color: #d40511;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+}
+
+.lang-selector{
+    color: #d40511;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #d40511;
+    font-weight: 500;
+}
+
+.lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* --- Main Content --- */
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-container h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #222222;
+    max-width: 650px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.highlight {
+    color: #ffcc00;
+}
+
+/* --- Tracking Card --- */
+.tracking-card {
+    width: 100%;
+    max-width: 620px;
+    text-align: left;
+}
+
+.textarea-wrapper {
+    background-color: #ffffff;
+    border: 1px solid #8e9aaf;
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    height: 230px;
+}
+
+.line-number {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 14px;
+    color: #333333;
+}
+
+.textarea-wrapper textarea::placeholder {
+    color: #a0a0a0;
+}
+
+.detection-info {
+    color: #ffcc00;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #FFCC00; /* Couleur orange/saumon clair */
+    color: #090909;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-submit:hover {
+    background-color: #ff9d7d;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #ffcc00;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #d40511;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    
+}
+
+.footer-links a {
+    color: #d40511;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+/* --- Bloc de texte sous le bouton --- */
+.info-block {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #ffcc00;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #555555;
+}
+
+.info-block p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.info-block i {
+    color: #ffcc00;
+    font-size: 14px;
+}
+
+/* ==========================================
+   STYLES RESPONSIVE (MOBILE ET TABLETTE)
+   ========================================== */
+
+   @media (max-width: 768px) {
+    /* 1. Réduction des marges latérales du Header */
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-right {
+        gap: 15px;
+        font-size: 13px;
+    }
+
+    /* 2. Adaptation des titres et espaces dans le contenu */
+    .main-container {
+        padding: 25px 15px;
+    }
+
+    .main-container h1 {
+        font-size: 26px; /* Taille de police plus adaptée sur smartphone */
+    }
+
+    .subtitle {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    /* 3. Reconfiguration du Footer */
+    .footer {
+        padding: 20px 15px;
+        flex-direction: column; /* Empile les éléments verticalement */
+        gap: 15px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-links {
+        flex-direction: column; /* Alignement vertical des liens du footer sur mobile */
+        gap: 10px;
+        align-items: center;
+    }
+}

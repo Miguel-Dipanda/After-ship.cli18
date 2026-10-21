@@ -1,0 +1,541 @@
+/* --- Réinitialisation & Styles de base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  :root {
+    --bg-page: #FFCC00;           /* Beige clair de la première page */
+    --bg-card: #FFCC00;           /* Carte blanche */
+    --primary: #d40511;           /* Orange AfterShip */
+    --primary-light: #fff0eb;     /* Orange clair */
+    --primary-soft: #ffe5db;
+    --text-dark: #d40511;
+    --text-muted: #d40511;
+    --border-color: #eaeaea;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+  
+  .app-header {
+    background-color: #FFCC00;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    background-color: var(--primary);
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: #d40511;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.btn-back:hover {
+    color: var(--primary);
+}
+
+  body {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* --- Layout Principal --- */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  
+  /* En-tête de suivi */
+  .tracking-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+  
+  .tracking-id-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .tracking-id {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #d40511;
+  }
+  
+  .copy-icon {
+    color: #0066cc;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .chevron-left {
+    color: #999;
+    margin-left: 5px;
+  }
+  
+  .time-dropdown {
+    color: #d40511;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  
+  /* Grille de contenu */
+  .tracking-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    margin-bottom: 80px;
+  }
+  
+  /* --- Colonne de Gauche --- */
+  .left-column h2 {
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+  }
+  
+  .delivery-status-text {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.4;
+  }
+  
+  /* Encadré d'alerte */
+  .alert-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border: 1px solid #d9381e;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+  }
+  
+  .alert-icon {
+    color: #d9381e;
+    font-size: 24px;
+  }
+  
+  .alert-content strong {
+    display: block;
+    font-size: 13px;
+    color: #d40511;
+    margin-bottom: 4px;
+  }
+  
+  .alert-content p {
+    font-size: 13px;
+    color: #666;
+  }
+  
+  /* Encadré Accordéon "Get updates" */
+  .updates-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 5px;
+    cursor: pointer;
+    color: #d40511;
+  }
+  
+  .updates-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+  }
+  
+  .updates-left span {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  
+  /* --- Colonne de Droite (Timeline) --- */
+  .timeline {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  /* Ligne verticale grise de la timeline */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 29px;
+    width: 8px;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+  }
+  
+  .timeline-step {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .marker {
+    width: 26px;
+    height: 26px;
+    background-color: #d9381e;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Points normaux */
+  .timeline-step.completed .marker {
+    width: 12px;
+    height: 12px;
+    left: 7px;
+    top: 4px;
+    background-color: #d40511;
+  }
+  
+  .timeline-step.pending .marker {
+    width: 6px;
+    height: 6px;
+    left: 10px;
+    top: 6px;
+    background-color: #d40511;
+  }
+  
+  /* Grand bouton d'erreur rouge avec l'icône ! */
+  .timeline-step.alert-step .marker {
+    width: 44px;
+    height: 44px;
+    left: -9px;
+    top: -5px;
+    background-color: #d9381e;
+    color: white;
+    font-size: 22px;
+    box-shadow: 0 0 0 4px #fff;
+  }
+  
+  /* Contenu textuel de la timeline */
+  .step-content {
+    margin-left: 45px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .step-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #d40511;
+    margin-bottom: 2px;
+  }
+  
+  .step-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .step-title.muted {
+    color: #777;
+  }
+  
+  /* Carte du statut en cours d'erreur */
+  .step-card {
+    margin-left: 50px;
+    background-color: #f2f2f2;
+    padding: 15px 20px;
+    border-radius: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+  
+  .status-red {
+    color: #d9381e;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  
+  .step-card strong {
+    font-size: 13px;
+    color: #333;
+  }
+  
+  .step-date {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .details-link {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .tracking-card {
+    width: 100%;
+    max-width: 100px;
+    text-align: left;
+}
+
+.textarea-wrapper {
+    background-color: #ffffff;
+    border: 1px solid #8e9aaf;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    gap: 6px;
+    height: 95px;
+}
+
+.line-number {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 14px;
+    color: #333333;
+}
+
+.textarea-wrapper textarea::placeholder {
+    color: #a0a0a0;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #FFCC00; /* Couleur orange/saumon clair */
+    color: #090909;
+    border: none;
+    padding: 14px;
+    margin: 5px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-submit:hover {
+    background-color: #ff9d7d;
+}
+
+
+  
+ 
+  /* --- Footer --- */
+.footer {
+    background-color: #FFCC00;
+    padding: 60px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #d40511;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #d40511;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+/* --- Bloc de texte sous le bouton --- */
+.info-block {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #ff6b35;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #555555;
+}
+
+.info-block p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.info-block i {
+    color: #ff6b35;
+    font-size: 14px;
+}
+
+/* ==========================================
+   MEDIA QUERY RESPONSIVE MOBILE (douane.css)
+   ========================================== */
+
+   @media (max-width: 768px) {
+    /* 1. Header & Marges globales */
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* 2. En-tête de suivi (ID + Emplacement) */
+    .tracking-top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* 3. Conversion de la grille 2 colonnes en 1 seule colonne */
+    .tracking-grid {
+        grid-template-columns: 1fr; /* Bascule sur une seule colonne */
+        gap: 35px;
+        margin-bottom: 40px;
+    }
+
+    /* 4. Zone du bouton "Validez" et du champ de texte */
+    .updates-box {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 15px 0;
+    }
+
+    .updates-left {
+        width: 100%;
+    }
+
+    .btn-submit {
+        width: 100%;
+        margin: 0;
+    }
+
+    .textarea-wrapper {
+        width: 100%;
+        height: auto;
+        min-height: 80px;
+    }
+
+    /* 5. Ajustement de la Timeline pour mobile */
+    .right-column {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .timeline {
+        padding-left: 10px;
+    }
+
+    .step-card {
+        margin-left: 45px;
+        width: calc(100% - 45px); /* Évite tout dépassement horizontal */
+        box-sizing: border-box;
+    }
+
+    /* 6. Footer mobile */
+    .footer {
+        padding: 25px 15px;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+}

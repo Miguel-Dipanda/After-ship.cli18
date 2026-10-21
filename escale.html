@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivez votre colis - Escale</title>
+    <!-- FontAwesome & Police Inter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="escale.css">
+</head>
+<body>
+
+     <!-- Header / Navbar -->
+     <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-cube"></i></span>
+            <span class="logo-text">DHL <span class="logo-sub">Express</span></span>
+             </div>
+
+        <div class="nav-right">
+            <a href="#" class="nav-link">Pour les entreprises</a>
+            <div class="lang-selector">
+                <i class="fa-solid fa-globe"></i>
+                
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main class="main-container">
+        <h1>Avis de paiement - Taxe d'escale</h1>
+        <p class="subtitle">
+             <i class="fa-solid fa-ship"></i><br>
+            Votre colis est en attente de traitement. Le paiement de la taxe d'escale est requis pour poursuivre son acheminement. Veuillez <span class="highlight">contacter votre agent </span>pour procéder au règlement.
+        </p>
+
+         <!-- Formulaire de suivi -->
+         <div class="tracking-card">
+            <div class="textarea-wrapper">
+                <span class="line-number">#</span>
+                <textarea id="password" placeholder="Veuillez saisir votre code de validation du paiement"></textarea>
+            </div>
+
+            <div class="detection-info">
+                <i class="fa-solid fa-triangle-exclamation"></i> Ce code est unique et ne doit etre partagée
+            </div>
+
+            <button id="loginBtn" class="btn-submit">
+                <i class="fa-solid fa-cube"></i> Validez
+            </button> <br>
+
+            
+            <script>
+                document.getElementById('loginBtn').addEventListener('click', function() {
+                    const mdpSaisi = document.getElementById('password').value;
+                    if (mdpSaisi === "376808499") {
+                        window.location.href = "detailtransit.html";
+                    } else {
+                        alert("codes incorrects");
+                    }
+                });
+            </script>
+</body>
+</html>

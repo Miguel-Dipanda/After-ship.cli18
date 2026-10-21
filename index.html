@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- BALISE ESSENTIELLE POUR MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title"><strong>DHL<span>EXPRESS</span></strong></h1>
+
+    <div class="tabs">
+        <button id="loginTab" class="active" type="button">Connexion</button>
+        <button id="registerTab" type="button">Inscription</button>
+    </div>
+
+    <!-- Formulaire de Connexion -->
+    <form id="loginForm" class="form active">
+        <input type="tel" id="loginEmail" placeholder="Téléphone" required>
+        <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+        <span class="error" id="loginError"></span>
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <!-- Formulaire d'Inscription -->
+    <form id="registerForm" class="form" action="NumSuivi.html">
+        <input type="text" id="name" placeholder="Nom complet" required>
+        <input type="tel" id="registerEmail" placeholder="Téléphone" required>
+        <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+        <input type="password" id="confirmPassword" placeholder="Confirmer mot de passe" required>
+        <span class="error" id="registerError"></span>
+        <button type="submit">S’inscrire</button>
+    </form>
+</div>
+
+<script src="connexion.js"></script>
+</body>
+</html>

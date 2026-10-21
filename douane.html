@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivi Colis</title>
+   <!-- FontAwesome & Police Inter -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="douane.css">
+</head>
+<body>
+
+    <!-- Header / Top Bar Desktop -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <span class="brand-title">DHL Express</span>
+            </div>
+
+            <a href="#" class="btn-back">
+           
+            </a>
+        </div>
+    </header>
+
+  <!-- Conteneur principal -->
+  <main class="container">
+
+    <!-- En-tête de la zone de suivi -->
+    <div class="tracking-top-bar">
+      <div class="tracking-id-section">
+        <span>Tracking ID:</span>
+        <a href="#" class="tracking-id"> AFT44PAN018</a>
+        
+        
+      </div>
+      <div class="time-dropdown">
+        <span>Centre de dédouanement - Aéroport international de San-Pedro   </span>
+       
+        
+      </div>
+    </div>
+
+    <!-- Section de suivi (Grille 2 colonnes) -->
+    <div class="tracking-grid">
+      
+      <!-- Colonne de gauche: Détails et Alerte -->
+      <div class="left-column">
+        <h2>DETAIL DE LA LIVRAISON</h2>
+        <p class="delivery-status-text">
+          Nous ajouterons une date de livraison dès la fin de la prise en charge de votre colis.
+        </p>
+
+        <!-- Encadré d'alerte rouge -->
+        <div class="alert-box">
+          <div class="alert-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="alert-content">
+            <strong>veuillez entrer votre code de déclaration douanière.</strong>
+            <p>action recommandée: Contactez votre agent pour obtenir votre code.</p>
+          </div>
+        </div>
+
+        <!-- Section accordéon "Get updates" -->
+
+        <div class="updates-box">
+          <div class="updates-left">
+            <button id="loginBtn" class="btn-submit">
+                <i class="fa-solid fa-cube"></i> Validez
+            </button> 
+            
+            
+          </div>
+          <div class="textarea-wrapper">
+            <span class="line-number">#</span>
+            <textarea id="password" placeholder="saisir votre code "></textarea>
+        </div>
+        </div>
+       
+      </div>
+
+      <!-- Colonne de droite: Timeline -->
+      <div class="right-column">
+        <ul class="timeline">
+          <!-- Étape 1 -->
+          <li class="timeline-step completed">
+            <div class="marker"></div>
+            <div class="step-content">
+              <span class="step-label">DEPUIS</span>
+              <span class="step-title">Aéroport international de Shenzhen Bao'an, (CH)</span>
+            </div>
+          </li>
+
+          <!-- Étape 2 -->
+          <li class="timeline-step completed">
+            <div class="marker"></div>
+            <div class="step-content">
+              <span class="step-title uppercase">COLIS RECU  </span>
+            </div>
+          </li>
+
+          <!-- Étape 3 (Alerte / Retard) -->
+          <li class="timeline-step alert-step">
+            <div class="marker">
+              <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <div class="step-card">
+              <span class="status-red">DELAI D'AUTORISATION</span>
+              <strong>Aéroport international de San-Pedro (CIV) </strong>
+              <span class="step-date">24/10/2026  17:45 PM</span>
+              <a href="#" class="details-link"> Merci de règlez vos frais de douane avant ce délai sous peine de pénalités</a>
+            </div>
+          </li>
+
+          <!-- Étape 4 -->
+          <li class="timeline-step pending">
+            <div class="marker"></div>
+            <div class="step-content">
+              <span class="step-title muted">DEDOUANEMENT TERMINE</span>
+            </div>
+          </li>
+
+          <!-- Étape 5 -->
+          <li class="timeline-step pending">
+            <div class="marker"></div>
+            <div class="step-content">
+              <span class="step-label"></span>
+              <span class="step-title muted">EN ATTENTE DE LIVRAISON, Aéroport international de San-Pedro, CIV, SPY  24/10/2026</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  
+  <footer class="footer">
+    <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+       
+        
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <div class="footer-links">
+        <a href="#">Contactez-nous</a>
+        <a href="#">Termes</a>
+        <a href="#">Confidentialité</a>
+    </div>
+</footer>
+
+
+<script>
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        const mdpSaisi = document.getElementById('password').value;
+        if (mdpSaisi === "G01670") {
+            window.location.href = "detail.html";
+        } else {
+            alert("codes incorrects");
+        }
+    });
+</script>
+
+</body>
+</html>

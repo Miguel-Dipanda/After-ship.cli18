@@ -1,0 +1,400 @@
+/* --- Reset & Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+    --bg-page: #fdf8f2;           /* Beige clair de la première page */
+    --bg-card: #ffffff;           /* Carte blanche */
+    --primary: #d40511;           /* Orange AfterShip */
+    --primary-light: #fff0eb;     /* Orange clair */
+    --primary-soft: #ffe5db;
+    --text-dark: #111111;
+    --text-muted: #777777;
+    --border-color: #eaeaea;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* --- Header / Navbar Desktop --- */
+.app-header {
+    background-color: #FFCC00;
+    border-bottom: 1px solid #FFCC00;
+    padding: 16px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    background-color: var(--primary);
+    color: #FFCC00;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: #d40511;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.btn-back:hover {
+    color: var(--primary);
+}
+
+/* --- Layout Principal --- */
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* --- Communs aux Cartes --- */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+/* --- En-tête : Numéro de Suivi --- */
+.tracking-number-card {
+    background-color: #FFCC00;
+    border: 1px solid var(--primary-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tracking-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-icon {
+    background-color: #FFCC00;
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.card-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.tracking-code {
+    font-size: 28px;
+    font-weight: 800;
+    color: black;
+    letter-spacing: 0.5px;
+}
+
+.badge {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge-orange {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+/* --- Grid 2 Colonnes sur Desktop --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* --- Carte Statut & Stepper --- */
+.status-card h2, .details-card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.stepper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 10px 10px;
+}
+
+.step-line {
+    position: absolute;
+    top: 42px;
+    left: 40px;
+    right: 40px;
+    height: 3px;
+    background-color: #FFCC00;
+    z-index: 1;
+}
+
+.step-line-active {
+    position: absolute;
+    top: 42px;
+    left: 40px;
+    width: 30%;
+    height: 3px;
+    background-color: #FFCC00;
+    z-index: 2;
+}
+
+.step {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.step-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #a0a0a0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+}
+
+.step-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.step.completed .step-icon {
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
+
+.step.active .step-icon {
+    background-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.step.active .step-label {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* --- Carte Détails --- */
+.section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888888;
+    letter-spacing: 0.8px;
+    margin-bottom: 20px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.detail-item.full-width {
+    grid-column: span 2;
+}
+
+.detail-icon {
+    color: var(--primary);
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.detail-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.detail-value.highlight {
+    color: var(--primary);
+}
+
+/* --- Adaptabilité Écran --- */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   OPTIMISATION MOBILE COMPLÈTE (< 768px)
+   ========================================== */
+
+   @media (max-width: 768px) {
+
+    /* 1. Conteneur principal */
+    .main-container {
+        margin: 15px auto;
+        padding: 0 15px;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 20px 16px;
+    }
+
+    /* 2. Header & Bouton */
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .brand-title {
+        font-size: 18px;
+    }
+
+    .btn-back {
+        font-size: 13px;
+    }
+
+    /* 3. Carte Numéro de Suivi */
+    .tracking-number-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .tracking-info {
+        gap: 12px;
+    }
+
+    .card-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .tracking-code {
+        font-size: 22px;
+    }
+
+    .badge {
+        align-self: flex-start;
+    }
+
+    /* 4. Grille principale : passage à 1 colonne */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* 5. Stepper d'expédition : passage en vertical */
+    .stepper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        gap: 20px;
+    }
+
+    /* Masquer les lignes horizontales desktop */
+    .step-line, .step-line-active {
+        display: none;
+    }
+
+    .step {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .step-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    /* 6. Grille des détails du colis : passage à 1 colonne */
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .detail-item.full-width {
+        grid-column: span 1;
+    }
+
+    .detail-value {
+        font-size: 14px;
+        word-break: break-word;
+    }
+}
